@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Course - Programming in C++</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f8f9fa; margin: 0; padding: 0; }
+    header { background-color: #343a40; color: #fff; padding: 1em; text-align: center; }
+    nav { background-color: #495057; padding: 0.5em; text-align: center; }
+    nav a { color: #fff; margin: 0 1em; text-decoration: none; cursor: pointer; }
+    main { padding: 2em; }
+    .chapter { background: #fff; padding: 1em; margin-bottom: 1em; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .grade-input { margin-top: 0.5em; }
+    input[type="number"] { width: 60px; padding: 0.3em; margin-left: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+    th, td { padding: 0.75em; border: 1px solid #ccc; text-align: left; }
+    th { background-color: #e9ecef; }
+    ul { margin: 0.5em 0 1em 1em; list-style: none; padding: 0; }
+    li { margin-bottom: 0.3em; }
+    section { display: none; }
+    #assignmentsSection { display: block; }
+    #hiring { background-color: #fff3cd; padding: 2em; border-radius: 12px; margin-top: 2em; }
+  </style>
+  <script>
+    function showSection(id) {
+      const sections = ['assignmentsSection', 'grades', 'hiring'];
+      sections.forEach(sec => {
+        document.getElementById(sec).style.display = 'none';
+      });
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function calculateAverage() {
+      const inputs = document.querySelectorAll("#grades input[type='number']");
+      let total = 0, count = 0;
+      inputs.forEach(input => {
+        const value = parseFloat(input.value);
+        if (!isNaN(value)) {
+          total += value;
+          count++;
+        }
+      });
+      const avg = count > 0 ? (total / count).toFixed(2) : '0.00';
+      document.getElementById("averageGrade").textContent = `Average Grade: ${avg}%`;
+    }
+
+    window.onload = () => {
+      showSection('assignmentsSection');
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Programming in C++</h1>
+    <p>Welcome to the 10-Hour Self-Learning Course</p>
+  </header>
+  <nav>
+    <a href="#" onclick="showSection('assignmentsSection')">Assignments</a>
+    <a href="#" onclick="showSection('grades')">Grading System</a>
+    <a href="#" onclick="showSection('hiring')">We're Hiring</a>
+    <a href="#" onclick="window.print()">Print Grades</a>
+  </nav>
+  <main>
+    <section id="assignmentsSection">
+      <h2>Assignments by Chapter</h2>
+      <!-- Your assignments and labs go here -->
+      <div class="chapter">
+        <h3>Chapter 1: Introduction to C++</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 1.13</li> 
+          <li><input type="checkbox"> Lab 1.15</li>
+          <li><input type="checkbox"> Lab 1.17</li>
+          <li><input type="checkbox"> Lab 1.19</li>
+          <li><input type="checkbox"> Lab 1.20</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 2: Variables / Assignments</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 2.25</li>
+          <li><input type="checkbox"> Lab 2.27</li>
+          <li><input type="checkbox"> Lab 2.28</li>
+          <li><input type="checkbox"> Lab 2.29</li>
+          <li><input type="checkbox"> Lab 2.30</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 3: Branches</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 3.22</li>
+          <li><input type="checkbox"> Lab 3.23</li>
+          <li><input type="checkbox"> Lab 3.24</li>
+          <li><input type="checkbox"> Lab 3.25</li>
+          <li><input type="checkbox"> Lab 3.27</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 4: Loops</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 4.15</li>
+          <li><input type="checkbox"> Lab 4.16</li>
+          <li><input type="checkbox"> Lab 4.17</li>
+          <li><input type="checkbox"> Lab 4.19</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 5: User-Defined Functions</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 5.21</li>
+          <li><input type="checkbox"> Lab 5.22</li>
+          <li><input type="checkbox"> Lab 5.23</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 6: Arrays/Vectors</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 6.18</li>
+          <li><input type="checkbox"> Lab 6.19</li>
+          <li><input type="checkbox"> Lab 6.20</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 7: Streams</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 7.10</li>
+          <li><input type="checkbox"> Lab 7.11</li>
+          <li><input type="checkbox"> Lab 7.12</li>
+          <li><input type="checkbox"> Lab 7.13</li>
+          <li><input type="checkbox"> Lab 7.14</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 8: Searching and Sorting Algorithms</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 8.10</li>
+          <li><input type="checkbox"> Lab 8.11</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 9: Objects and Classes</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 9.21</li>
+          <li><input type="checkbox"> Lab 9.22</li>
+          <li><input type="checkbox"> Lab 9.23</li>
+          <li><input type="checkbox"> Lab 9.24</li>
+          <li><input type="checkbox"> Lab 9.25</li>
+        </ul>
+        Grade: <input type="number">
+        <h3>Chapter 10: Pointers</h3>
+        <ul>
+          <li><input type="checkbox"> Reading Assignment</li>
+          <li><input type="checkbox"> Lab 10.13</li>
+          <li><input type="checkbox"> Lab 10.14</li>
+        </ul>
+        Grade: <input type="number">
+      </div>
+      <!-- Repeat other chapters here -->
+    </section>
+
+    <section id="grades">
+      <h2>Grading System</h2>
+      <table>
+        <thead>
+          <tr><th>Chapter</th><th>Lab</th><th>Grade</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Chapter 1 </td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 1</td><td>Lab 1.13</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 1</td><td>Lab 1.15</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 1</td><td>Lab 1.17</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 1</td><td>Lab 1.19</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 1</td><td>Lab 1.20</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2 </td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2</td><td>Lab 2.25</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2</td><td>Lab 2.27</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2</td><td>Lab 2.28</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2</td><td>Lab 2.29</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 2</td><td>Lab 2.30</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Lab 3.22</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Lab 3.23</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Lab 3.24</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Lab 3.25</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 3</td><td>Lab 3.27</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+           <tr><td>Chapter 4</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 4</td><td>Lab 4.15</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 4</td><td>Lab 4.16</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 4</td><td>Lab 4.17</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 4</td><td>Lab 4.19</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 5</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 5</td><td>Lab 5.21</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 5</td><td>Lab 5.22</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 5</td><td>Lab 5.23</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 6</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 6</td><td>Lab 6.18</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 6</td><td>Lab 6.19</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 6</td><td>Lab 6.20</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Lab 7.10</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Lab 7.11</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Lab 7.12</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Lab 7.13</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 7</td><td>Lab 7.14</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 8</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 8</td><td>Lab 8.10</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 8</td><td>Lab 8.11</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Lab 9.21</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Lab 9.22</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Lab 9.23</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Lab 9.24</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 9</td><td>Lab 9.25</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 10</td><td>Reading Assignment</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 10</td><td>Lab 10.13</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+          <tr><td>Chapter 10</td><td>Lab 10.14</td><td><input type="number" onchange="calculateAverage()"></td><td><input type="checkbox"></td></tr>
+        </tbody>
+      </table>
+      <p id="averageGrade">Average Grade: 0.00%</p>
+    </section>
+
+    <section id="hiring">
+      <h2>📣 We're Hiring: C++ Instructor Wanted</h2>
+      <p>
+        I'm building a self-paced, open-enrollment <strong>Programming in C++ course</strong> designed around <a href="https://zybooks.com/" target="_blank">zyBooks</a> content — and I’m looking for a qualified <strong>C++ instructor</strong> to join the project.
+      </p>
+      <p>
+        If you teach C++, use zyBooks, or are passionate about making programming more accessible to learners online, I’d love to hear from you!
+      </p>
+      <p>
+        This is a paid opportunity with flexible hours. You’ll help:
+      </p>
+      <ul>
+        <li>Review and polish the course layout</li>
+        <li>Develop fair grading policies</li>
+        <li>Optionally contribute bonus lessons or tips</li>
+      </ul>
+      <p>
+        💬 Interested? Email me directly at <strong>squresh2318@student.gwinnetttech.edu</strong> or Discord: kiryu0122.
+      </p>
+      <p><em>Let’s build something great together.</em></p>
+    </section>
+  </main>
+</body>
+</html>
